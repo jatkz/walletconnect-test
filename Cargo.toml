@@ -1,0 +1,28 @@
+[package]
+name = "walletconnect-example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = []
+qr = ["walletconnect/qr"]
+
+[dependencies]
+walletconnect = { version = "0.2.0" }
+futures = "0.3"
+log = "0.4"
+
+# qr
+atty = { version = "0.2", optional = true }
+qrcode = { version = "0.12", optional = true }
+termcolor = { version = "1", optional = true }
+terminfo = { version = "0.7", optional = true }
+
+[dev-dependencies]
+env_logger = "0.9"
+
+[[example]]
+name = "qr"
+required-features = ["qr"]
